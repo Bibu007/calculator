@@ -49,6 +49,11 @@ function backSpaceLogic(event){
     if(event.key === 'Backspace' || event.type=="click"){
      if(fun==''){
         input1=input1.slice(0,-1); 
+        if(input1.length==2 || input1.length==1){
+            if(input1.includes('-')){
+                input1='';
+            }
+        }
         displayInput(input1);
     }
     else{
@@ -56,6 +61,11 @@ function backSpaceLogic(event){
         displayInput(input2);
     }
 }
+
+    if (input1 == ''){
+        input1=''; input2=''; fun=''; displayInput(input1)
+    }
+        
 }
 
 function operatorBtnLogic(event){
@@ -77,6 +87,7 @@ function operatorBtnLogic(event){
 
 function equalTo(event){
     let result;
+        
     if(fun=='add'){
         result = Number(input1) + Number(input2);
         displayInput(result);
