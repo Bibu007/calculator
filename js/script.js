@@ -29,30 +29,39 @@ dot.addEventListener("click", dotLogic);
 document.addEventListener("keydown", backSpaceLogic);
 
 function digitBtnLogic(event){
-    if (input1.length >12){
-        return;
-    }
+    console.log(input1);
+    console.log(input2);
     if(fun==''){
+        if(input1.length<12){
         input1 = input1 + (event.target.id);
         displayInput(input1);
+        }
     }
     else{
+        if(input2.length<12){
         input2 = input2 + (event.target.id);
         displayInput(input2);
+        }
     }
-    console.log(input1);
-    console.log(fun);
+    
+    //console.log(fun);
     //display.textContent=`${input1}`;
 }
 
 function backSpaceLogic(event){
     if(event.key === 'Backspace' || event.type=="click"){
      if(fun==''){
-        input1=input1.slice(0,-1); 
-        if(input1.length==2 || input1.length==1){
+        //console.log(input1.length);      
+        if(input1.length==2){
             if(input1.includes('-')){
                 input1='';
             }
+            else{
+                input1=input1.slice(0,-1); 
+            }
+        }
+        else{
+            input1=input1.slice(0,-1); 
         }
         displayInput(input1);
     }
