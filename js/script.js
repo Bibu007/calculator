@@ -79,6 +79,11 @@ function backSpaceLogic(event){
 
 function operatorBtnLogic(event){
     console.log(event.target.id);
+    if(input1==''){
+        input1 = '';  fun=''; input2='';
+        displayInput(input1);
+        return;
+    }
     if(event.target.id === 'add'){
         console.log("Hey");
         fun = 'add';
@@ -96,8 +101,19 @@ function operatorBtnLogic(event){
 
 function equalTo(event){
     let result;
+
+    if(input2==''|| input1==''){
+        input1 = '';  fun=''; input2='';
+        displayInput(input1);
+        return;
+    }
         
     if(fun=='add'){
+        if(input2==''||input1==''){
+        input1 = ''; fun=''; input2='';
+        displayInput(input1);
+        return;
+    }
         result = Number(input1) + Number(input2);
         displayInput(result);
         input1=String(result);
@@ -105,6 +121,11 @@ function equalTo(event){
         fun='';
     }
     else if(fun=='sub'){
+        if(input2==''||input1==''){
+        input1 = ''; fun=''; input2='';
+        displayInput(input1);
+        return;
+    }
         result = Number(input1) - Number(input2);
         displayInput(result);
         input1=String(result);
@@ -112,6 +133,11 @@ function equalTo(event){
         fun='';
     }
     else if(fun=='mul'){
+        if(input2==''||input1==''){
+        input1 = '';  fun=''; input2='';
+        displayInput(input1);
+        return;
+    }
         result = Number(input1) * Number(input2);
         displayInput(result);
         input1=String(result);
@@ -119,6 +145,11 @@ function equalTo(event){
         fun='';
     }
     else if(fun=='div'){
+        if(input2==''||input1==''){
+        input1 = ''; fun=''; input2='';
+        displayInput(input1);
+        return;
+    }
         result = Number(input1) / Number(input2);
         displayInput(result);
         input1=String(result);
