@@ -165,7 +165,7 @@ function dotLogic(event){
         displayInput(input1);}
     }
     else{
-        if(input1.includes(".")){return;}
+        if(input2.includes(".")){return;}
         else {input2 = input2 + ".";
         displayInput(input2);}
     }
